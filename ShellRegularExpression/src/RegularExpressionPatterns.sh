@@ -1,6 +1,7 @@
 #!/bin/bash -x
 
-function firstNameValidation() {
+#this method is used to validate firstName
+function validateFirstName() {
   firstName=$1;
   pattern=^[A-Z]{1}+[a-z]{3,15}$
   if [[ $firstName =~ $pattern ]];
@@ -9,7 +10,8 @@ function firstNameValidation() {
   fi
 }
 
-function lastNameValidation() {
+#this method is used to validate lasttName
+function validateLastName() {
     lastName=$1;
     pattern=^[A-Z]{1}+[a-z]{3,15}$;
     if [[ $lastName =~ $pattern ]];
@@ -18,25 +20,28 @@ function lastNameValidation() {
     fi
 }
 
-function userNameValidation() {
+#this method is used to validate userName
+function validateUserName() {
     userName=$1;
-    pattern=^[A-za-z]+[A-Za-z0-9@$%_-]{5,10}$;
+    pattern=^[A-Za-z0-9@_-]{5,10}$;
     if [[ $userName =~ $pattern ]];
      then
        return 1;
     fi
 }
 
-function passwordValidation() {
+#this method is used to validate password
+function validatePassword() {
     password=$1;
-    pattern=^[A-Za-z0-9]+.[A-Z]+.[a-z]+.[0-9]+.\[@#$%&]
+    pattern=^[A-Za-z0-9].[A-Z].[a-z].[0-9].[@#$%&]{6,15}$
     if [[ $password =~ $pattern ]];
      then
        return 1;
     fi
 }
 
-function numberValidation() {
+#this method is used to validate mobileNumber
+function validateMobileNumber() {
     number=$1
     pattern=^[0-9]{2}+[[:space:]]+[1-9]{1}+[0-9]{9}$
     if [[ $number =~ $pattern ]];
@@ -45,7 +50,8 @@ function numberValidation() {
     fi
 }
 
-function eMailIdValidation() {
+#this method is used to validate eMailId
+function validateEMailId() {
     eMailId=$1
     pattern=^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$
     if [[ $eMailId =~ $pattern ]];
