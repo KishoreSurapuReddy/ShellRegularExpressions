@@ -14,7 +14,7 @@ validateUserName "Kishore@123"
 username=$?
 echo "user name is valid :"$username
 
-validatePassword "Kishore@123"
+validatePassword "kiIshore@++"
 password=$?
 echo "password is valid :"$password
 
@@ -22,6 +22,6 @@ validateMobileNumber "91 1234567890"
 number=$?
 echo "number is valid :$number"
 
-validateEMailId "kishore@gmail.com"
+validateEMailId "kishore123.@gmail.com"
 mail=$?
 echo "mail is valid :$mail"
